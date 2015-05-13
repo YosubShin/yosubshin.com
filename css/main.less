@@ -1,0 +1,368 @@
+/*	OVERRIDES */
+
+a, p, blockquote, h1, h2, h3, h4, h5, h6 {
+	color: inherit;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+em, i {
+	font-style: italic;
+}
+	
+strong, b {
+	font-weight: bold;
+}
+
+/*	RENDERING TRICK */
+
+/*	This makes ALL elements on the page calculate their sizes based on content + padding + border all together. You might find it to be more logical. */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*	But if you have images with borders, it will resize them, which is bad. So we undo it for images. */
+img { 
+	box-sizing: content-box; 
+}
+
+body {
+	font-family: 'Droid Serif', serif;
+	background: url('images/background-pattern-cmyk.svg');
+	background-size: 50px 50px;
+	background-position: center -20px;
+	display: flex;
+	height: 100%;
+	color: rgba(130,130,130,1.0);
+}
+
+li {
+	list-style-type: none;
+}
+
+figure {
+	padding: 10px;
+	width: 100%;
+	background-color: white;
+	border: 1px solid rgba(180, 180, 200,1.0);
+
+	img {
+		width: 100%;
+	}
+}
+
+.selected-link {
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+.left-side {
+	flex: 1;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	display: flex;
+	width: 50%;
+	background-color: rgba(0,113,188,1.0);
+
+	.frame {
+		flex: 1; /* Take entire height and width of left side */
+
+		margin: 50px;
+		bottom: 0px;
+		padding: 10px;
+		border: 5px solid white;
+
+		display: flex;
+		flex-direction: column;
+
+		header {
+			flex: 1;
+			margin: 0 auto 20px auto;
+			color: white;
+
+			display: flex;
+			align-itmes: center;
+
+			div {
+				margin: auto;
+				h1 {
+					font-family: 'PT Sans', sans-serif;
+					margin: 20px auto 5px;
+					text-align: center;
+					font-size: 50px;
+				}
+
+				q {
+					font-family: 'Nixie One', cursive;
+					/*width: 450px;*/
+					margin: 20px auto;
+					display: block;
+					text-align: center;
+				}
+
+				a:hover {
+					color: rgba(180, 180, 200,1.0);
+				}
+			}			
+		}		
+
+		nav {
+			flex: 1.5;
+
+			display: flex;
+			flex-direction: column;
+
+			.section {
+				flex: 1;
+				display: flex;
+				color: white;
+				font-family: 'Nixie One', cursive;
+
+
+				div {
+					flex: 1;
+
+					font-family: 'PT Sans', sans-serif;
+					font-size: 1.2em;
+					text-align: right;
+					padding: 10px;
+				}
+
+				ul {
+					padding: 10px;
+					flex: 1;
+
+					li {
+						margin-bottom: 8px;
+					}
+				}
+
+				a:hover {
+					color: rgba(180, 180, 200,1.0);
+				}
+			}
+		}
+	}
+}
+
+
+.right-side {
+	margin-left: 50%;
+	/*padding: 50px;*/
+	display: flex;
+	flex-direction: column;
+
+	.inventory {
+		display: flex;	
+		/*flex-wrap: wrap;*/
+		flex-direction: column;
+		margin: 50px 50px 0 50px;
+
+		.item {
+			padding: 20px;
+			margin-bottom: 20px;
+			/*background: rgba(255,255,255,1);*/
+			background: rgba(245,245,250,1);
+
+			/*border: 2px solid #eee;*/
+			/*border: 2px solid rgba(200,200,200,1);*/
+			overflow: hidden;
+
+			font-family: 'PT Sans', sans-serif;
+			line-height: 1.5em;
+
+			/*display: flex;*/
+
+			a {
+				display: flex;
+
+				figure {
+					flex: 0.3;
+					padding: 10px;
+					border: none;
+
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					img {
+						flex: 1;
+						width: 100%;
+					}
+
+				}
+
+				.item-desc {
+					flex: 0.7;
+					padding: 10px;
+
+					h3 {
+						color: rgba(0,113,188,1.0);
+					}
+
+					p {
+						font-family: 'Droid Serif', sans-serif;
+						color: rgba(130,130,130,1.0);
+					}
+
+				}							
+			}			
+		}
+
+		.item:hover {
+			transition: background-color 0.5s ease;
+			background: rgba(220,220,230,1);
+		}
+
+	}
+
+	.fit-screen-height {
+		height: 100vh;
+		display: flex;
+
+		.frame {
+			flex: 1; /* Take entire height and width of left side */
+			overflow: scroll;
+
+			margin: 50px;
+			bottom: 0px;
+			padding: 25px 50px;
+
+			/*border: 5px solid rgba(0,113,188,1.0);;*/
+			border: 5px solid rgba(200, 200, 220,1.0);
+
+			/*display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;*/
+
+			p {
+				line-height: 1.5em;
+
+			}
+
+			hr {
+				height: 1px;
+				border: 0; border-top: 1px solid #ccc;
+				border-color: rgba(180, 180, 200,1.0);
+				margin: 30px 0;
+			}
+
+			.other-items {
+				display: flex;
+				.item {
+					flex: 1;
+					padding: 10px;
+
+					.button {
+						font-family: 'PT Sans', sans-serif;
+						font-size: 1.5em;
+						margin-bottom: 5px;
+					}
+
+
+					.img-container {
+						width: 100%;
+						padding: 0;
+					}
+
+					.item-desc {
+						h3 {
+							font-family: 'Nixie One', cursive;
+							font-size: 1.2em;
+						}
+					}
+				}
+
+				.prev-item:hover,.next-item:hover {
+					transition: background-color 0.5s ease;
+					background: rgba(220,220,230,1);
+				}				
+
+				.next-item {
+					text-align: right;
+					
+				}
+
+				.other-items-padding {
+					flex: .5;
+				}
+			}
+
+			ul {
+				ul {
+				    list-style: none;
+				    padding:0;
+				    margin:0;
+				}
+
+				li { 
+					line-height: 1.5em;
+				    padding-left: 1em; 
+				    text-indent: -.7em;
+				}
+
+				li:before {
+					padding-right: 7px;
+				    content: "■"; 
+				    color: rgba(0,113,188,1.0);
+				}				
+			}
+
+			.image-frame-4x4 {
+				display: flex;
+				flex-wrap: wrap;
+				border: 1px solid rgba(180, 180, 200,1.0);
+
+				figure {
+					border: none;
+					width: 50%;
+				}
+			}
+		}		
+	}
+}
+
+
+/*	CONTENT FOR MAIN ELEMENT */
+
+/*	Note that it is possible to set unique paragraph styles for 
+	the ITEM DETAILS page and the PAGE page, using various methods */
+
+/*	Title for interior pages */
+h1 {
+	font-size: 32px;
+	/*padding-top: 10px;*/
+	/*padding-bottom: 5px;*/
+	/*border-right: 1px solid rgba(200,200,220,1);*/
+	margin-bottom: 10px;
+	/*font-family: 'PT Sans', sans-serif;*/
+	font-family: 'Nixie One', sans-serif;
+}
+/*	Subtitle for interior pages */
+h3 {
+	font-size: 24px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+h4 {
+	font-size: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+/*	Paragraphs for interior pages */
+p {
+	margin: 10px 0;
+}
+
+/*	FOOTER */
+footer {
+	font-family: 'Varela Round', sans-serif;
+	margin: 0px auto 15px auto;
+	text-align: center;
+}
+
