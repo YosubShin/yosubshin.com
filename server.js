@@ -1,3 +1,4 @@
+var path = require('path');
 var _ = require('underscore');
 var util = require('util');
 var fs = require('fs');
@@ -30,12 +31,12 @@ var articleIds = {
   ]
 };
 var articles = {};
-fs.readdirSync('./articles')
+fs.readdirSync(path.join(__dirname, './articles'))
 .filter(function(x) {
 	return x.search('\\.') === -1;
 })
 .map(function(x) {
-	articles[x] = require(util.format('./articles/%s/data.json', x));
+	articles[x] = require(path.join(__dirname, 'articles', x, 'data.json'));
 });
 
 var articlesBySections = {};
@@ -66,7 +67,7 @@ app.get('/articles/:articleId', function (req, res) {
   var articleId = req.params.articleId;
   var data = articles[articleId];
   var sectionName = data.sectionName;
-  var fullDescription = fs.readFileSync(util.format('./articles/%s/page.html', articleId));
+  var fullDescription = fs.readFileSync(path.join(__dirname, 'articles', articleId, 'page.html'));
   data['fullDescription'] = fullDescription;
   var articleIndex = -1;
   for (i = 0; i < articleIds[sectionName].length; i++) {
