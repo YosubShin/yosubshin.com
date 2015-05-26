@@ -1,0 +1,32 @@
+extends ./layout.jade
+
+block content
+  .fit-screen-height
+    .frame
+      != fullDescription
+
+      hr
+      .other-items
+        if prev
+          section.item.prev-item
+            a(href='/articles/#{prev.id}')
+              .button &lt; PREV
+              figure.img-container
+                img(src='/articles/#{prev.id}/images/thumbnail.svg')
+              .item-desc
+                h3 #{prev.fullName}
+        else
+          section.item
+
+        .other-items-padding
+
+        if next
+          section.item.next-item
+            a(href='/articles/#{next.id}')
+              .button NEXT &gt;
+              figure.img-container
+                img(src='/articles/#{next.id}/images/thumbnail.svg')
+              .item-desc
+                h3 #{next.fullName}
+        else
+          section.item

@@ -1,0 +1,60 @@
+extends ./layout.jade
+
+block content
+  main.inventory
+    each section in sections
+      div(id=section.sectionId)
+      if typeof(articlesBySections[section.sectionId]) !== 'undefined'
+        each article in articlesBySections[section.sectionId]
+          section.item
+            a(href='/articles/#{article.id}')
+              figure
+                img(src='/articles/#{article.id}/images/thumbnail.svg')
+              .item-desc
+                h3 #{article.fullName}
+                p
+                  | #{article.shortDescription}
+    //- section.item
+    //-   a(href='/articles/magazine-cover')
+    //-     figure
+    //-       img(src='/images/magazine-cover-normal.svg')
+    //-     .item-desc
+    //-       h3 Magazine Cover: The Airbnb Magazine
+    //-       p
+    //-         | In this project, I chose to create a magazine after a famous house sharing and traveling startup called &lsquo;Airbnb&rsquo;. It was a natural choice for me as it has a lot of possibilities for getting nice images, and as a devoted user of the website, I have rich background on their identity and what they are about.
+    //- section.item
+    //-   a(href='/#')
+    //-     figure
+    //-       img(src='images/museum-guide-normal.svg')
+    //-     .item-desc
+    //-       h3 Spurlock Museum Guide
+    //-       p
+    //-         | The hardest part was helping the users to physically navigate inside the gallery to find the right artifacts. After a little bit of frustration, I came up with an idea that creating a 3-dimensional map would help people navigate through the space a lot easier. Therefore, I went ahead with Illustrator&rsquo;s 3-D extrusion and rotation features to create a 3-D map of the Spurlock museum&rsquo;s Ancient Mediterranean gallery.
+    //- section.item
+    //-   a(href='/#')
+    //-     figure
+    //-       img(src='images/tv-bumper-normal.svg')
+    //-     .item-desc
+    //-       h3 TV Station Bumper
+    //-       p
+    //-         | Startup TV is a TV channel that airs programs related to startups and technology products. Therefore, the target audience of Startup TV is startup entrepreneurs and those who are interested in startup scene and technology industry in general.
+    //- #software-engineering
+    //- section.item
+    //-   a(href='/#')
+    //-     figure
+    //-       img(src='images/scooter-simulation-normal.svg')
+    //-     .item-desc
+    //-       h3 Scooter Simulation in VR: OculuScooter
+    //-       p
+    //-         | OculuScooter is an award winning virtual scooter simulator which uses real scooter handle and your own foot as inputs.
+    //-         | Our main source of inspiration was a friend of ours who gets heavy motion sickness from virtual reality (VR) applications. We had heard from Professor Steve LaValle that a user is less likely to get motion sickness if the VR application moves as a direct result of the user&apos;s physical movement. A good example of this is the Birdly flying simulator which allows a user to fly through the scene like a bird by flapping his arms as if they were wings.
+    //- section.item
+    //-   a(href='/#')
+    //-     figure
+    //-       img(src='images/cassandra-normal.svg')
+    //-     .item-desc
+    //-       h3 Distributed Key-Value Store in Supercomputer
+    //-       p
+    //-         | In this paper we propose a system called Parqua, which imbues ring-based key-value/NoSQL stores with the ability to perform reconfiguration operations in an online and efficient manner. We present the design and implementation of Parqua. We have integrated Parqua into Apache Cassandra. Experi- ments based on our cluster deployments show that during reconfiguration Parqua only mildly degrades read and write latencies (compared to when there is no reconfiguration), and maintains high availability.
+  footer
+    p Copyright &copy; 2014-15 Yosub Shin

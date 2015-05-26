@@ -1,0 +1,25 @@
+<h1>OculuScooter: Scooter Simulator in VR</h1>
+
+<figure>
+	<iframe src="https://player.vimeo.com/video/128041321" width="100%" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+</figure>
+
+<p>
+	OculuScooter is a virtual scooter simulator which uses a physical scooter handle and user's own foot as inputs. 
+	We built our own scooter using PVC pipes. We used a rotation sensor to detect the precise angle of the scooter handle. For roller skate, we attached a LED and a photo diode, and put a reflective marker on a wheel to detect the rotations per second(RPM) of the roller skate wheel and converted it to the user's kicking motion in the virtual scooter.
+	We used <a href="https://www.oculus.com/">Oculus Rift DK2</a> and <a href="http://unity3d.com/">Unity 4</a> as our development platform. For hardware parts, <a href="http://www.arduino.cc/">Arduino</a> and <a href="http://www.spark.io">Spark Core</a> were used for integrating the rotation sensor inputs and wireless roller skate inputs, respectively.
+	The <a href="http://challengepost.com/software/oculuscooter">older version of OculuScooter</a> was initially made in <a href="http://hackillinois.org">HackIllinois 2015</a>. The new version features significantly improved handle's rotation detection, improved roller skate RPM measurement algorithm, ability to move in backward direction, and more beautiful scenery of course.
+	The cost for building our system was somewhere under 150 dollars, where most of it were spent at roller skate($50), micro controllers($25 * 2), and PVC pipes($20).
+</p>
+
+<figure class="img-container">
+	<a href="scooter-simulator/images/screenshot-1.jpg"><img src="scooter-simulator/images/screenshot-1.jpg" /></a>
+</figure>
+
+<p>
+  	Our project is inspired by <a href="http://somniacs.co/">Birdly</a>, a VR bird simulatior where a user can fly in the virtual space by intuitively flapping the wings.
+  	We were interested in pursuing a solution to find a good way to navigate in VR, because many existing solutions cause <a href="http://en.wikipedia.org/wiki/Virtual_reality_sickness">VR sicknesses</a> due to <a href="http://en.wikipedia.org/wiki/Illusions_of_self-motion#Vection">vection</a>, or rather disorienting in case of teleport based systems.
+	However, when we were introduced to the Birdly simulator, we noticed that <a href="http://www.tested.com/art/makers/463385-hands-birdly-virtual-reality-flight-simulator/">many people who tried it reported little or no sickness</a> while or after using it. 
+	Therefore, we believed that the key to reducing the VR sickness is to generate the physically immersive experiences&mdash;in our case, it's controlling of the handle and the foot movement&mdash;so that the user's focus is deviated from vestibular mismatches caused by the simulator.
+	Majority of our users told us that they didn't feel sick or nauseous, which is a great sign considering the significant amount of linear and angular accelerations caused in our simulator.
+</p>
