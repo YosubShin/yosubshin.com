@@ -92,7 +92,7 @@ app.get('/articles/:articleId', function (req, res) {
 app.get('/articles/:articleId/images/:imageName', function (req, res) {
   var articleId = req.params.articleId;
   var imageName = req.params.imageName;
-  res.sendfile(util.format('articles/%s/images/%s', articleId, imageName));
+  res.sendfile(path.join(__dirname, 'articles', articleId, 'images', imageName));
 });
 
 var server = app.listen(8080, function () {
