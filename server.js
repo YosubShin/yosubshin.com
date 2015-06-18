@@ -63,6 +63,10 @@ app.get('/', function (req, res) {
   res.render('index', defaultData);
 });
 
+app.get('/oculuscooter', function (req, res) {
+    res.redirect('http://www.oculuscooter.com');
+});
+
 app.get('/articles/:articleId', function (req, res) {
   var articleId = req.params.articleId;
   var data = articles[articleId];
