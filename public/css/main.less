@@ -149,7 +149,6 @@ figure {
 	}
 }
 
-
 .right-side {
 	margin-left: 50%;
 	/*padding: 50px;*/
@@ -323,6 +322,51 @@ figure {
 			}
 		}		
 	}
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)  {
+  body {
+        flex-direction: column;
+  }
+
+  .left-side {
+    position: initial;
+    width: initial;
+
+    .frame {
+      margin: 15px;
+
+      nav {
+        .section {
+          flex-direction: column;
+          text-align: center;
+
+          div {
+            text-align: center;  
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .right-side {
+    position: initial;
+    width: initial;
+    margin-left: initial;
+
+    .inventory {
+      margin: 15px 15px 0 15px;
+    }
+
+    .fit-screen-height {
+      height: initial;
+      .frame {
+        margin: 15px;
+        padding: 10px;
+      }
+    }
+  }
 }
 
 
