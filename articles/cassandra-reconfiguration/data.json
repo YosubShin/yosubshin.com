@@ -1,0 +1,7 @@
+{
+	"id": "cassandra-reconfiguration",
+	"shortName": "Database Reconfiguration",
+	"fullName": "Parqua: Online Reconfigurations in Virtual Ring-Based NoSQL Systems",
+	"sectionName": "software-engineering",
+	"shortDescription": "Parqua is a system that augments a ring-based NoSQL database system that enables an online reconfiguration which involves large amount of data movement."
+}

@@ -4,6 +4,7 @@ var util = require('util');
 var fs = require('fs');
 var express = require('express');
 var jade = require('jade');
+var Handlebars = require('handlebars');  // template engine
 var app = express();
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'jade');
@@ -19,12 +20,13 @@ var articleIds = {
   "graphic-design": [
     "educational-poster",
     "magazine-cover",
-    "museum-guide"
+    "museum-guide",
+    "tablet-magazine"
   ],
   "software-engineering": [
-    "scooter-simulator"
+    "scooter-simulator",
   //   // "kv-store-supercomputer",
-  //   // "parqua"
+    "cassandra-reconfiguration"
   ],
   "others": [
     "about-yosub"
@@ -45,10 +47,8 @@ for (sectionName in articleIds) {
   for (i in articleIds[sectionName]) {
     var articleId = articleIds[sectionName][i];
     articlesBySections[sectionName].push(articles[articleId]);
-    console.log(articleId);
   }
 }
-console.log(articlesBySections);
 
 var defaultData = {
   articlesBySections: articlesBySections,
@@ -72,7 +72,10 @@ app.get('/articles/:articleId', function (req, res) {
   var data = articles[articleId];
   var sectionName = data.sectionName;
   var fullDescription = fs.readFileSync(path.join(__dirname, 'articles', articleId, 'page.html'));
-  data['fullDescription'] = fullDescription;
+  var templateObject = {
+    base: '/articles/' + articleId
+  };
+  data['fullDescription'] = Handlebars.compile(fullDescription.toString())(templateObject);
   var articleIndex = -1;
   for (i = 0; i < articleIds[sectionName].length; i++) {
     if (articleIds[sectionName][i] === articleId) {
@@ -89,7 +92,6 @@ app.get('/articles/:articleId', function (req, res) {
   }
 
   var result = _.extend({}, data, defaultData);
-  console.log('Data:', result);
   res.render('article', result);
 });
 

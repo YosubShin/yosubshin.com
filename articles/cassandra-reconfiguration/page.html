@@ -1,0 +1,14 @@
+<h1>Parqua: Online Reconfigurations in Virtual Ring-Based NoSQL Systems</h1>
+
+<figure class="img-container">
+	<a href="{{base}}/images/parqua.png"><img src="{{base}}/images/parqua.png" /></a>
+</figure>
+
+<p>The performance of key-value/NoSQL storage systems is highly tied to the choice of (primary) key for the database table. As application (e.g., business) requirements change over time, and in order to fine-tune the performance of the database to the real query workload, system administrators need to change the primary key of the table. The primary key change is a specific example of a broader class of reconfiguration operations that affect a lot of data all at once. In industry deployments of key-value/NoSQL stores, such reconfigurations are known to be a major pain point. We seek to support reconfiguration operations in keyvalue/ NoSQL storage systems in an automated, online, and efficient manner, i.e., without interrupting the serving of incoming reads and writes, and quickly. Our previous work, titled Morphus, tackled the online reconfiguration problem for sharded NoSQL stores like MongoDB. However, Morphus is inapplicable to ring-based key-value/NoSQL systems (like Cassandra, Riak, and Voldemort) because these rely on a virtual ring (and often consistent hashing). This makes the problem more constrained. In this paper we propose a system called Parqua, which imbues ring-based key-value/NoSQL stores with the ability to perform reconfiguration operations in an online and efficient manner. We present the design and implementation of Parqua. We have integrated Parqua into Apache Cassandra. Experiments based on our cluster deployments show that during reconfiguration Parqua maintains high availability, and with a small impact on read and write latencies.</p>
+
+<hr>
+<h1>Links</h1>
+<ul>
+	<li><a href="https://www.ideals.illinois.edu/handle/2142/78185">Tech Report</a></li>
+	<li>Shin, Yosub, Mainak Ghosh, Indranil Gupta. "(Poster) Parqua: Online Reconfigurations in Virtual Ring-Based NoSQL Systems," Proc. IEEE International Conference on Cloud and Autonomic Computing (ICCAC), 2015. <a href="http://dprg.cs.uiuc.edu/docs/parqua-cac15/Parqua_CAC2015_poster.pdf">[pdf]</a></li>
+</ul>
