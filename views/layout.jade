@@ -33,34 +33,5 @@ html
                 each article in articlesBySections[section.sectionId]
                   li
                     a(href='/articles/#{article.id}', class=articleId === article.id ? "selected-link" : "") #{article.shortName}
-
-          //- .section
-          //-   div
-          //-     a.at.section-header(href='/#graphic-design') Graphic Design
-          //-   ul
-          //-     li
-          //-       a(href='/articles/educational-poster', class=articleName === "educational-poster" ? "selected-link" : "") Educational Poster
-          //-     li
-          //-       a(href='/articles/magazine-cover', class=articleName === "magazine-cover" ? "selected-link" : "") Magazine Cover
-          //-     li
-          //-       a(href='/articles/museum-guide', class=articleName === "museum-guide" ? "selected-link" : "") Museum Guide
-          //- .section
-          //-   div
-          //-     a.at.section-header(href='/#software-engineering') Software Engineering
-          //-   ul
-          //-     li
-          //-       a(href='/articles/scooter-simulation', class=articleName === "scooter-simulation" ? "selected-link" : "") Scooter Simulation in VR
-          //-     li
-          //-       a(href='/articles/kv-store-supercomputer', class=articleName === "kv-store-supercomputer" ? "selected-link" : "") Distributed Key-Value Store in Supercomputer
-          //-     li
-          //-       a(href='/articles/parqua', class=articleName === "parqua" ? "selected-link" : "") Online Reconfiguration in Apache Cassandra
-          //- .section
-          //-   div
-          //-     a.at.section-header(href='/#') Others
-          //-   ul
-          //-     li
-          //-       a(href='/articles/about-yosub.html', class=articleName === "about-yosub" ? "selected-link" : "") About Yosub
-          //-     li
-          //-       a(href='http://yosubshin.com/resume.pdf') R&eacute;sume
     .right-side
       block content
