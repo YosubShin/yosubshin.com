@@ -21,7 +21,8 @@ var articleIds = {
     "educational-poster",
     "magazine-cover",
     "museum-guide",
-    "tablet-magazine"
+    "tablet-magazine",
+    "font-making"
   ],
   "software-engineering": [
     "scooter-simulator",
