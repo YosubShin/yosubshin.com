@@ -1,0 +1,7 @@
+{
+	"id": "cassandra-blue-waters",
+	"shortName": "Key-Value Store on Supercomputer",
+	"fullName": "Cassandra on Blue Waters",
+	"sectionName": "software-engineering",
+	"shortDescription": "We integrated a well known distributed key-value store Apache Cassandra with a supercomputer, in order to evaluate the feasibility of deploying a distributed key-value store on an HPC environment."
+}

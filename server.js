@@ -26,8 +26,8 @@ var articleIds = {
   ],
   "software-engineering": [
     "scooter-simulator",
-  //   // "kv-store-supercomputer",
-    "cassandra-reconfiguration"
+    "cassandra-reconfiguration",
+    "cassandra-blue-waters"
   ],
   "others": [
     "about-yosub"
