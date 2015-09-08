@@ -25,6 +25,7 @@ var articleIds = {
     "font-making"
   ],
   "software-engineering": [
+    "vr-minigolf",
     "scooter-simulator",
     "cassandra-reconfiguration",
     "cassandra-blue-waters"

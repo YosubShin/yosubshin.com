@@ -1,0 +1,35 @@
+<h1>Ultimate VR Minigolf: Fully immersive VR minigolf experience with haptic feedback</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TvjwUh9taOA?t=13m34s" frameborder="0" allowfullscreen></iframe>
+
+<p>Our project is selected to be one of the top 10 hacks at <a href="http://2015f.pennapps.com/">PennApps XII</a> that hosted 2000+ participants from all over the world.</p>
+
+<h2>Inspiration</h2>
+<p>We love virtual reality and the immersive feeling it gives us, but it is hard to perform precise maneuvers without tactile feedback.Having previous experience in augmenting virtual reality with instrumented hardware to enhance user's experience, we decided to try for a more challenging experience in VR: minigolf.</p>
+
+<h2>What It Does</h2>
+<p>While wearing the Oculus Rift virtual reality headset, user can hold onto a real putter to play virtual minigolf. However, the real fun is when you actually hit the virtual golf ball. The putter is instrumented with special hardware to deliver a haptic sensation of hitting a golf ball in synchronization with the virtual experience.</p>
+
+<h2>How We Built It</h2>
+<p>We instrumented the putter with a Wii remote which gives us accelerometer reading of the orientation of the putter. We use this along with Oculus Rift DK2's head tracking information to control the virtual putter. Furthermore, we have an arduino which controls a servo motor and an electromagnet. Together, they release a golf ball that is hooked up to the putter at the correct timing to deliver the haptic sensation of hitting the ball.</p>
+
+<h2>Challenges We Ran Into</h2>
+<p>We ran into lots of challenges with various hardwares, especially the Wii remote. Originally, we planned to use the Wii remote's IR tracking system to get both the position and orientation of the putter. However, the Wii remote's tracking turned out to be very unreliable. It can only track up to 4 IR light sources, and all 4 are needed to solve for all the degrees of freedom which could not be done reliably. In the end, we resorted to using only accelerometer data from the Wii remote.</p>
+
+<h2>Accomplishments That We Are Proud Of</h2>
+<p>We also ran into some challenges while building an electromagnet that can trigger the release of the golf ball attached to putter. The electromagnet required at least 1A of current, but we did not have any high load resistors that can handle this kind of load. We worked this around by remembering Kirchoff's law and connecting lots of small resistors in parallel. We also bumped up the strength of our electromagnet by attaching neodymium magnets to the other side of the electromagnet.</p>
+
+<h2>What We learned</h2>
+<p>We learned a tremendous amount about how the Wii remote works by spending numerous hours with it. We also learned valuable hardware lessons such as workarounds with limited resources and quickly changing designs.</p>
+
+<h2>What's Next For Ultimate VR Minigolf</h2>
+<p>Because we ran into so many unexpected challenges, we didn't get to quite refine all the details and fine tune different parameters. We would like to work up on these details in the future to complete the ultimate VR minigolf experience.</p>
+
+<h2>The Team</h2>
+<p><a href="http://www.se-joon.com">Se-Joon Chung</a>, Jong Bin Lim, <a href="http://www.yosubshin.com">Yosub Shin</a></p>
+
+<h2>Links</h2>
+<ul>
+	<li><a href="http://devpost.com/software/ultimate-vr-minigolf">Devpost Project Link</a></li>
+	<li><a href="https://youtu.be/o18UHow4ih8">Demo of the mechanical setup</a></li>
+</ul>
